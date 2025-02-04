@@ -200,7 +200,7 @@ section {
     display: flex;
     flex-direction: column;
     align-items: center;
-    
+
 }
 
 .habilidades h2 {
@@ -271,29 +271,32 @@ section {
 
 .portifolio {
     background: rgba(13, 17, 23, 0.9);
-    padding: 5rem 9%;
+    padding: 5rem 6%;
     border-radius: 1.5rem;
 }
 
 .portifolio h2 {
     font-size: 3rem;
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
     color: var(--main-color);
     text-align: center;
 }
 
 .portifolio-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
     gap: 2rem;
+    margin: 0 auto;
 }
 
 .portifolio-item {
     background: var(--second-bg-color);
-    padding: 1.5rem;
-    border-radius: 1rem;
-    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.5);
-    transition: transform 0.3s ease;
+    border-radius: 8px;
+    overflow: hidden;
+    width: 30%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
 }
 
 .portifolio-item:hover {
@@ -301,40 +304,57 @@ section {
 }
 
 .portifolio-item img {
-    max-width: 100%;
-    border-radius: 1rem;
-
-    height: auto;
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
 }
 
 .portifolio-content {
+    padding: 20px;
     text-align: center;
 }
 
 .portifolio-content h4 {
-    font-size: 2rem;
+    font-size: 1.8rem;
+    margin-bottom: 10px;
     color: var(--main-color);
-    margin-bottom: 1rem;
 }
 
 .portifolio-content p {
-    font-size: 1.4rem;
-    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: var(--text-color);
+}
+
+.portifolio-content strong {
+    color: var(--main-color);
 }
 
 .portifolio-content a {
     display: inline-block;
-    background: var(--main-color);
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: var(--main-color);
     color: var(--second-bg-color);
-    padding: 0.8rem 1.6rem;
-    border-radius: 1rem;
     text-decoration: none;
-    transition: background 0.3s;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
 }
 
 .portifolio-content a:hover {
-    background: var(--accent-color);
+    background-color: var(--accent-color);
 }
+
+.github-btn {
+    background-color: #333;
+    margin-left: 10px;
+}
+
+.github-btn:hover {
+    background-color: #555;
+}
+
 
 .github-btn {
     display: inline-block;
@@ -352,6 +372,17 @@ section {
 
 .github-btn:hover {
     background-color: #444;
+}
+
+.footer {
+    text-align: center;
+    padding: 10px;
+    background-color: var(--second-bg-color);
+    color: #fff;
+    font-size: 14px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
 }
 
 
@@ -400,8 +431,7 @@ section {
     }
 
     .header .navbar {
-        display: flex;
-        gap: 10px;
+        display: none;
         position: absolute;
         top: 60%;
         right: 0;
@@ -412,6 +442,10 @@ section {
         box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
         backdrop-filter: blur(10px);
         border-radius: 10px;
+    }
+
+    .header .navbar.active {
+        display: flex;
     }
 
     .header .navbar a {
@@ -453,5 +487,46 @@ section {
 
     .habilidade-box {
         width: 80%;
+    }
+}
+
+
+@media (max-width: 1024px) {
+    .portifolio-container {
+        justify-content: center;
+    }
+
+    .portifolio-item {
+        width: 45%;
+    }
+}
+
+@media (max-width: 768px) {
+    .portifolio-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+    }
+
+    .portifolio-item {
+        width: 80%;
+    }
+}
+
+@media (max-width: 480px) {
+    .portifolio h2 {
+        font-size: 2rem;
+    }
+
+    .portifolio-item {
+        width: 100%;
+    }
+
+    .portifolio-content h4 {
+        font-size: 1.4rem;
+    }
+
+    .portifolio-content p {
+        font-size: 1rem;
     }
 }
