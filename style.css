@@ -196,11 +196,16 @@ section {
     margin-bottom: 2rem;
 }
 
-.habilidades {
+.habilidade {
     display: flex;
-    flex-direction: column;
     align-items: center;
-
+    background: rgba(0, 255, 255, 0.1);
+    padding: 10px;
+    border-radius: 8px;
+    width: 100%;
+    /*max-width: 250px;*/
+    text-align: left;
+    gap: 10px;
 }
 
 .habilidades h2 {
@@ -226,7 +231,12 @@ section {
     box-shadow: 0 0 10px rgba(0, 255, 255, 0.2);
     text-align: center;
     width: 30%;
-    min-width: 250px;
+    min-width: 300px;
+}
+
+.habilidades {
+    text-align: center;
+
 }
 
 .habilidade-titulo {
@@ -234,6 +244,7 @@ section {
     color: var(--main-color);
     margin-bottom: 10px;
 }
+
 
 .habilidade-desc {
     font-size: 1.4rem;
@@ -243,15 +254,9 @@ section {
 
 .habilidades-lista {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
     gap: 15px;
-    flex-wrap: wrap;
-}
-
-.habilidade {
-    text-align: center;
-    padding: 10px;
-    border-radius: 8px;
 }
 
 .habilidade img {
@@ -261,13 +266,28 @@ section {
     margin-bottom: 10px;
 }
 
-.habilidade span {
-    display: block;
+
+.habilidade-texto {
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.habilidade-texto span {
     font-size: 1.2rem;
     font-weight: bold;
     color: var(--text-color);
+    display: block;
 }
 
+.habilidade-texto p {
+    font-size: 1rem;
+    color: var(--text-color);
+    display: flex;
+    align-items: center;
+    text-align: left;
+    gap: 10px;
+}
 
 .portifolio {
     background: rgba(13, 17, 23, 0.9);
